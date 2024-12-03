@@ -6,11 +6,8 @@
 */
 
 // @ts-ignore
-Deno.serve(
-  () => {
-    return new Response("Hello World", { status: 200 });
-  },
-  { port: 3000 }
-);
+Deno.serve({ port: 3000 }, () => {
+  return new Response("Hello World", { status: 200 });
+});
 
 console.log("Deno server running on http://localhost:3000");
