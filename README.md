@@ -69,3 +69,15 @@ bun install
 # Running server
 bun run start:{runtimeName}
 ```
+
+## Benchmarking runtimes
+
+To benchmark the runtimes you can use [hey](https://github.com/rakyll/hey).
+
+```bash
+hey -c 10 -n 1000 http://localhost:3000/
+
+# -c number of workers to run concurrently
+# -n number of requests
+```
+
