@@ -1,0 +1,12 @@
+{
+  "name": "runtime-comparison",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:deno": "deno run --allow-net packages/deno-server/server.ts",
+    "start:bun": "bun run packages/bun-server/server.ts",
+    "start:node": "node packages/node-server/server.ts"
+  }
+}
