@@ -1,0 +1,22 @@
+{
+  "version": "4",
+  "redirects": {
+    "https://esm.run/react": "https://cdn.jsdelivr.net/npm/react/+esm",
+    "https://esm.run/react-dom/server": "https://cdn.jsdelivr.net/npm/react-dom/server/+esm"
+  },
+  "remote": {
+    "https://cdn.jsdelivr.net/npm/react-dom/server/+esm": "3333143d631591f0d8e45a2dfc50bfd5ddd5ef72e4990dcd4a449c28c2c6c2cf",
+    "https://cdn.jsdelivr.net/npm/react/+esm": "7155a58fa0dae2a631e2791a5f86af8820c04369745972927ae56e23bcc184bd",
+    "https://cdn.jsdelivr.net/npm/react@18.3.1/+esm": "7155a58fa0dae2a631e2791a5f86af8820c04369745972927ae56e23bcc184bd"
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@types/bun@^1.1.14",
+        "npm:@types/react-dom@^18.3.1",
+        "npm:react-dom@^18.3.1",
+        "npm:react@^18.3.1"
+      ]
+    }
+  }
+}

@@ -75,9 +75,8 @@ bun run start:{runtimeName}
 To benchmark the runtimes you can use [hey](https://github.com/rakyll/hey).
 
 ```bash
-hey -c 10 -n 1000 http://localhost:3000/
+hey -c 10 -z 10s http://localhost:3000/
 
 # -c number of workers to run concurrently
-# -n number of requests
+# -z time of running (e.g 10s = 10 seconds)
 ```
-

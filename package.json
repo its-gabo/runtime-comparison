@@ -1,12 +1,19 @@
 {
   "name": "runtime-comparison",
   "private": true,
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "start:deno": "deno run --allow-net packages/deno-server/server.ts",
-    "start:bun": "bun run packages/bun-server/server.ts",
+    "start:deno": "deno run --allow-net --allow-import packages/deno-server/server.tsx",
+    "start:bun": "bun run packages/bun-server/server.tsx",
     "start:node": "node packages/node-server/server.js"
+  },
+  "dependencies": {
+    "@types/bun": "^1.1.14",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

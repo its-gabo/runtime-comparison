@@ -1,9 +1,30 @@
-const http = require("http");
+import { createServer } from "http";
 
-const server = http.createServer((req, res) => {
+import { createElement } from "react";
+import { renderToPipeableStream } from "react-dom/server";
+
+const App = () =>
+  createElement(
+    "html",
+    null,
+    createElement(
+      "body",
+      null,
+      createElement("h1", null, "Hello World"),
+      createElement("p", null, "This is a React SSR")
+    )
+  );
+
+const server = createServer(async (req, res) => {
   if (req.url === "/") {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("Hello World");
+    const stream = renderToPipeableStream(App(), {
+      onShellReady() {
+        res.statusCode = 200;
+        res.setHeader("Content-type", "text/html");
+        res.setHeader("Cache-Control", "no-transform");
+        stream.pipe(res);
+      },
+    });
   }
 });
 
